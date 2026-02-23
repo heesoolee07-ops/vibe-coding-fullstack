@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Vibe Coding Premium Home V1</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#000000",
+                        "background-light": "#f4f4f4",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        'xl': '24px',
+                        '2xl': '32px',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+        }
+
+        .dark .hero-gradient {
+            background: linear-gradient(135deg, #1e1b4b 0%, #0a0a0a 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-background-dark text-black dark:text-white transition-colors duration-300">
+    <nav
+        class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-12">
+                <a class="text-xl font-bold tracking-tight" href="#">VIBE CODING</a>
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a class="hover:opacity-60 transition-opacity" href="#">Courses</a>
+                    <a class="hover:opacity-60 transition-opacity" href="#">Workstations</a>
+                    <a class="hover:opacity-60 transition-opacity" href="#">AI Tools</a>
+                    <a class="hover:opacity-60 transition-opacity" href="#">Community</a>
+                    <a class="hover:opacity-60 transition-opacity" href="#">Support</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                    <span class="material-icons-outlined text-xl">search</span>
+                </button>
+                <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                    <span class="material-icons-outlined text-xl">shopping_cart</span>
+                </button>
+                <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                    <span class="material-icons-outlined text-xl">person_outline</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section class="relative w-full h-[85vh] overflow-hidden flex items-center justify-center hero-gradient">
+        <div class="absolute inset-0 z-0">
+            <img alt="Abstract modern workstation" class="w-full h-full object-cover opacity-20 dark:opacity-40"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3wZQ-Fn-wX1QRwron6KMpr8C3CQEPxFca8g-vibv6ljA5beAuo_uBUrEyVxIwpE9g2sPSLz3xkybDGXH4gFGLQNbAy3tZvgYmAaIjh-T4HOcgukXQQO7jlbrfpk_J1DRiUvjb18rCtqT94OiHLB8wT-gneUplFtQu-JoBPzPUWY1iweHLFX4mb9l-xqmIq7YeXkmVgVtQjmw8owHT--kVjFk0yQmimLdc3JJjMAEqzo8HKvUV5ptFik0EuwvfIDx7_UytH5POUJtN" />
+        </div>
+        <div class="relative z-10 text-center max-w-4xl px-6">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                Vibe Coding: The Future of Creative Development
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 font-light">
+                Experience the harmony of aesthetics and performance.
+                Build beautiful things with the ultimate developer ecosystem.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                <button
+                    class="px-8 py-4 bg-primary text-white dark:bg-white dark:text-black rounded-full font-semibold hover:opacity-90 transition-all text-lg">
+                    Explore Now
+                </button>
+                <button
+                    class="px-8 py-4 border border-black dark:border-white rounded-full font-semibold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-lg">
+                    Watch Film
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 px-6 max-w-[1440px] mx-auto overflow-hidden">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-bold mb-2">Signature Tracks</h2>
+                <p class="text-gray-500 dark:text-gray-400">Curated learning paths for the modern creator.</p>
+            </div>
+            <div class="flex gap-2">
+                <button
+                    class="p-3 border border-gray-200 dark:border-gray-800 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                    <span class="material-icons-outlined">chevron_left</span>
+                </button>
+                <button
+                    class="p-3 border border-gray-200 dark:border-gray-800 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                    <span class="material-icons-outlined">chevron_right</span>
+                </button>
+            </div>
+        </div>
+        <div class="flex gap-6 overflow-x-auto hide-scrollbar pb-8 -mx-6 px-6">
+            <div class="min-w-[400px] flex-shrink-0 group cursor-pointer">
+                <div class="relative h-[500px] rounded-3xl overflow-hidden mb-6 bg-gray-100 dark:bg-gray-900">
+                    <img alt="AI Coding course"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjtEmgR7jXEjBUaaFaGY796xjgP8dL1HTtalsPq4XVjisdPXbFeFf5X8UqySqpH0yHlKDpLxcUzMv3tSJA2OizBpMKdCIWw1CDXDSvvnxWFEFnMGUscsV67QTWHeowtoNMpfA6mC-Wi-vKtUCRKxRXsWNousw-9kCsJapcWJjsKW_zuBYbKP8dPUC0Oulvb29VB0BVFM1sss0RYh8sYQmuaF9JqpD7wC06nHh0HTKgybI7vyvZrpcYYOr6_AIfOBafxPYnMT2KtRM6" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                        <span class="text-white font-medium">Learn more →</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-1">AI-Powered Coding</h3>
+                <p class="text-gray-500 dark:text-gray-400">Master the synergy between LLMs and creativity.</p>
+            </div>
+            <div class="min-w-[400px] flex-shrink-0 group cursor-pointer">
+                <div class="relative h-[500px] rounded-3xl overflow-hidden mb-6 bg-gray-100 dark:bg-gray-900">
+                    <img alt="Web Design course"
+                        class="max-w-none w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC73BiTCKbAEKv0i0AvcbbVuLwOLXSRjiOrRz6mAAtrtJLiRyMgaGolhtgH-tWIF9odfvPzwoRjysU2NAAgl8tnMD9brYR9M2G6gKvei7b6OagE1FUq7DO2-D31s94u3go_H917QUAKKWjnwv3RhADfll9m9cLBFSkskvPwe78NOLq6KxUvHV59Nsy9lMASpPeEBNWnbiP4jrcKVm1f2Q-YESIvIW9ttFwlvxA7Q_W9Yi40bdslmURp8XEKvULSM3wdJcVCKJnW-JEQ" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                        <span class="text-white font-medium">Learn more →</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-1">Minimalist Web Design</h3>
+                <p class="text-gray-500 dark:text-gray-400">Crafting premium digital experiences.</p>
+            </div>
+            <div class="min-w-[400px] flex-shrink-0 group cursor-pointer">
+                <div class="relative h-[500px] rounded-3xl overflow-hidden mb-6 bg-gray-100 dark:bg-gray-900">
+                    <img alt="Data Art course"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa-_FEsUvfz5OKyZ6yd9OXFQiJGt-9gP4_ehqLDRL8xqoeCTTgtjN6L4ioaMXWomuDUJ9thlAIwbwTjPDOEAShorkMJRfEVloKHbtIMCZqqsksZt2zVLboCZiy4Y1WeZZWABAZvz-Fw2UkWsFgca0Vkm7gP9x38qELF85I9uoTs-FPOEUlGG7ECOYwLKCkHIobY2v7dxaWlTctPgmWWMM6BxHySjKZq6-rFlW37ixn54z28DVvDaxqt65cmmBtPoHO6NjHTxIziNTW" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                        <span class="text-white font-medium">Learn more →</span>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-1">Generative Data Art</h3>
+                <p class="text-gray-500 dark:text-gray-400">Where engineering meets pure imagination.</p>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-gray-50 dark:bg-[#0f0f0f]">
+        <div class="max-w-[1440px] mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center">Recommended for You</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all group">
+                    <div
+                        class="aspect-square mb-8 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden">
+                        <img alt="Premium mechanical keyboard"
+                            class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwUb2hLmibX_xROggtfYOrAiJ6qNIoRnddYbLQ43t3JqbFvjHN2_tClr-PQRcmzJjpIB_p6_Uso7IdpxVAd_i4Eed9bjw4pGr42d9UyXoJlaZbO07hh5nGS6spjNXdA5-Jnf7Ev6bdPSGsHXloyZOyjtud5L_7zxvP9UG5sXI8z7gnrlN9OGOPWA9MHtOthG17-MT-dT4WWvkV3613zw2fo0siRwWGjaRRsk7vEkZKmWhsflDzCu_AqWT_7znwH-xDKwtdmrz5pdos" />
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">New
+                        Arrival</span>
+                    <h3 class="text-xl font-bold mt-2 mb-1">Vibe Mechanical Pro</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Precision tactile response for long
+                        sessions.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold">$199.00</span>
+                        <button
+                            class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-full text-sm font-medium">Add
+                            to Cart</button>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all group">
+                    <div
+                        class="aspect-square mb-8 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden">
+                        <img alt="High res monitor"
+                            class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuClG-cGQ3-gbu4cvF4g2g034nmYCRMcBxKMLxJ0K0FKStcweLTv-FHAAZ68Lh9rSrWRaphFdGlHPgMZslrmzUmRLpIkO90PKNdCjTGarJ292hmgFaz4bl5ef_f38ctpUDRoXDPDdpPnaBOwLcEA59Iol4P35q-DUPwlZa8NIctND_wh6t8Gwmfx7gAbhJhHEZ7lyWAFGzJxW8A67I9PHBEZNQo-WlZzMpIYNN2F1G6KImM8cU7-DTh-ooccAc2SWfPtxFLBf1MzqKby" />
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-green-600 dark:text-green-400">Editor's
+                        Choice</span>
+                    <h3 class="text-xl font-bold mt-2 mb-1">Vision 5K Ultra</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Color accuracy for the most demanding
+                        designers.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold">$1,299.00</span>
+                        <button
+                            class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-full text-sm font-medium">Add
+                            to Cart</button>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all group">
+                    <div
+                        class="aspect-square mb-8 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden">
+                        <img alt="Premium headphones"
+                            class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa4XmMr9eoToX7mW4WSRLVdxTZ1lEUlGhYEGz51j1uvLO6xV9i4q3FgFB5-5Xdg7p95Eehla771RuJUFX15j6Wc7ocfMgIN5dO2SEc3CIN3u2V1uNfD3WUuNjMUF15EvFfA5Yr62pFI8Xm4QLYu0RtHEA_j_f90FYlieC0fLAW7BCNWG7jFp8S5CbdGerRt8HZgdhgYnqHMFrLo9p3hZFlzfIlilqT4ApfucntJelOlaL4MBClUzeFz0J2S7AJS4IgsfVLdG1Lz20S" />
+                    </div>
+                    <span
+                        class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400">Exclusive</span>
+                    <h3 class="text-xl font-bold mt-2 mb-1">Acoustic Pure</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Focus in silence with adaptive noise
+                        cancellation.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold">$349.00</span>
+                        <button
+                            class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-full text-sm font-medium">Add
+                            to Cart</button>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all group">
+                    <div
+                        class="aspect-square mb-8 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden">
+                        <img alt="Sleek laptop stand"
+                            class="w-3/4 object-contain group-hover:scale-110 transition-transform duration-500"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs957w2jRx9XsS0klBg3sgrwrRo3TWK4kAKjZaXKZsaty0V573DpxbKRKfpyEx7R7JeiRiWytLY94yMVlsxDLrSnl6t_5RjnmcUnuLg9DZdFvzum4JoBZr47XRrfpgs-Fd1umzhVJutRGBO7OAiXT2MOgFw4XIIc5IvqaHcGz1w05Oxkgb4GDrsu0HLmKbM-8wpBKZow8F48w6oTCL5sIPbIAG5ZYljIZwgP6TIP_isHZqFQFjFD1_8HuyLwAG2F8YVOP5RzjJvGSn" />
+                    </div>
+                    <span
+                        class="text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">Featured</span>
+                    <h3 class="text-xl font-bold mt-2 mb-1">Elevate Base</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Anodized aluminum stand for perfect
+                        ergonomics.</p>
+                    <div class="flex justify-between items-center mt-auto">
+                        <span class="text-xl font-bold">$89.00</span>
+                        <button
+                            class="bg-black text-white dark:bg-white dark:text-black px-4 py-2 rounded-full text-sm font-medium">Add
+                            to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 px-6 max-w-[1440px] mx-auto">
+        <h2 class="text-3xl font-bold mb-12">Discover Our Stories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a class="relative h-[400px] group overflow-hidden rounded-[2.5rem]" href="#">
+                <img alt="Community meeting"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRVpI_rTou8tp9jiwYn__3aRc2uNZ9u-6zVzWtMU1LK9ecNX_Uq9TvhUgFMj2YpA9boAtfDVgWkIjf3lMrrV85yxIczYpdhcHKMD5DTm1B-an-2B90mNfz0UAx5RDeF6cvykI3rUreBkBzj3Ji-i4cSBjgrFpCVW33Iw1PLOljcjg_5q9ytrXHBvpefp2lLqdzI6p2cSP6hsPD4gFuEVGCE82IikTamQ8eiQBO2w1XAzkvUEJB0l5c8RnnM-Llo2qmvZ7kVNLFTAlR" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 flex flex-col justify-end p-8">
+                    <h3 class="text-xl font-bold text-white mb-2">Building Communities</h3>
+                    <p class="text-white/70 text-sm">How vibe coding connects minds worldwide.</p>
+                </div>
+            </a>
+            <a class="relative h-[400px] group overflow-hidden rounded-[2.5rem]" href="#">
+                <img alt="Clean code on screen"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ76U715CdN22Qu6tDyv_EWsqTetj402G5IOwyNULkhvduZR9zi6qjoWGnPY3vj3X-_Ob-KMtdabW2sB5bn_7SVc86Nel07yLBQ_bAmVr7GlelWK4ieGimyWmmMR63j4xBEqTx68kPUPBx12W15u0cVu6eI8ASpxArpb3iNzPM07Tjw98F8tE4ZaII5wYUzAgWFlchkdXbPPUDbSJGjVpeR3BF279RMzqqmnoZTXp6kTLeZeXjMNuZFDf7ofVVLeIGja9TTc1R0ERt" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 flex flex-col justify-end p-8">
+                    <h3 class="text-xl font-bold text-white mb-2">The Zen of Code</h3>
+                    <p class="text-white/70 text-sm">Finding flow state in your development process.</p>
+                </div>
+            </a>
+            <a class="relative h-[400px] group overflow-hidden rounded-[2.5rem]" href="#">
+                <div
+                    class="absolute inset-0 bg-blue-600 flex items-center justify-center p-8 group-hover:bg-blue-700 transition-colors">
+                    <span
+                        class="material-icons-outlined text-white text-8xl opacity-20 group-hover:rotate-12 transition-transform duration-700">auto_awesome</span>
+                </div>
+                <div class="absolute inset-0 flex flex-col justify-end p-8">
+                    <h3 class="text-xl font-bold text-white mb-2">Bespoke AI</h3>
+                    <p class="text-white/70 text-sm">Customizing your workspace with intelligent agents.</p>
+                </div>
+            </a>
+            <a class="relative h-[400px] group overflow-hidden rounded-[2.5rem]" href="#">
+                <img alt="Abstract space data"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOrBYHk3YpgQwGlgdxyDjb02O3shGAE2rlLqy-iZIx8BFru0_8pc5VtCw-lhhiKzbhAI0boiDU3tTuymxWWXtnWQsW1i_smaRh86qVMk-AWqtEaWuxKNNwoapjGBdmoKvw3CU8JHiNBfnkj5YLsgQii-yESJdf8r6JgSFxpmaatlhlpS-NN9AWNOqRao5UIAmCP0rc1oGtGbPEHDTUZDfK44YgqMw9dclTYHsHhbc4qtmgOZ3IniWl1NBtw9ERIhAHf4AReLkcKHIv" />
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 flex flex-col justify-end p-8">
+                    <h3 class="text-xl font-bold text-white mb-2">Digital Horizons</h3>
+                    <p class="text-white/70 text-sm">What's next for the Vibe Coding ecosystem.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+    <footer class="bg-gray-100 dark:bg-gray-900/50 py-20 px-6 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-[1440px] mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 mb-20">
+                <div class="col-span-2">
+                    <a class="text-xl font-bold mb-6 block" href="#">VIBE CODING</a>
+                    <p class="text-gray-500 dark:text-gray-400 max-w-xs mb-6">
+                        Leading the transition to a more beautiful, intuitive, and efficient development world.
+                    </p>
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center border border-gray-200 dark:border-gray-700"
+                            href="#">
+                            <i class="material-icons-outlined text-xl">language</i>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center border border-gray-200 dark:border-gray-700"
+                            href="#">
+                            <i class="material-icons-outlined text-xl">camera_alt</i>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center border border-gray-200 dark:border-gray-700"
+                            href="#">
+                            <i class="material-icons-outlined text-xl">mail_outline</i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Product</h4>
+                    <ul class="space-y-4 text-gray-500 dark:text-gray-400 text-sm">
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Courses</a>
+                        </li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors"
+                                href="#">Workstations</a></li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">AI Gear</a>
+                        </li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Displays</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Learn</h4>
+                    <ul class="space-y-4 text-gray-500 dark:text-gray-400 text-sm">
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors"
+                                href="#">Documentation</a></li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Tutorials</a>
+                        </li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Blog</a></li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Company</h4>
+                    <ul class="space-y-4 text-gray-500 dark:text-gray-400 text-sm">
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">About Us</a>
+                        </li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Careers</a>
+                        </li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors"
+                                href="#">Sustainability</a></li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-6">Support</h4>
+                    <ul class="space-y-4 text-gray-500 dark:text-gray-400 text-sm">
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Order
+                                Status</a></li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Returns</a>
+                        </li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Shipping</a>
+                        </li>
+                        <li><a class="hover:text-black dark:hover:text-white transition-colors" href="#">Help Center</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-10 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                    © 2024 Vibe Coding Inc. All rights reserved.
+                </p>
+                <div class="flex gap-8 text-xs text-gray-500 dark:text-gray-400">
+                    <a class="hover:underline" href="#">Privacy Policy</a>
+                    <a class="hover:underline" href="#">Terms of Service</a>
+                    <a class="hover:underline" href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <button
+        class="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-xl flex items-center justify-center border border-gray-100 dark:border-gray-700"
+        onclick="document.documentElement.classList.toggle('dark')">
+        <span class="material-icons-outlined dark:hidden">dark_mode</span>
+        <span class="material-icons-outlined hidden dark:block">light_mode</span>
+    </button>
+
+</body>
+
+</html>
