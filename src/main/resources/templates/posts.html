@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <title>Vibe Coding | Post List</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#000000",
+                        "background-light": "#f4f4f4",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        'xl': '24px',
+                        '2xl': '32px',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-background-dark text-black dark:text-white transition-colors duration-300 min-h-screen">
+    <nav
+        class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-12">
+                <a class="text-xl font-bold tracking-tight" th:href="@{/}">VIBE CODING</a>
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a class="hover:opacity-60 transition-opacity" th:href="@{/posts}">Posts</a>
+                    <a class="hover:opacity-60 transition-opacity" href="#">Courses</a>
+                    <a class="hover:opacity-60 transition-opacity" href="#">Workstations</a>
+                    <a class="hover:opacity-60 transition-opacity" href="#">AI Tools</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors">
+                    <span class="material-icons-outlined text-xl">search</span>
+                </button>
+                <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                    onclick="document.documentElement.classList.toggle('dark')">
+                    <span class="material-icons-outlined dark:hidden">dark_mode</span>
+                    <span class="material-icons-outlined hidden dark:block">light_mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-[1440px] mx-auto px-6 py-12">
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold tracking-tight mb-4">Post List</h1>
+            <p class="text-gray-500 dark:text-gray-400">Explore our latest thoughts and updates.</p>
+        </div>
+
+        <div
+            class="bg-white dark:bg-gray-900 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/50">
+                        <th class="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider w-20">No</th>
+                        <th class="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider">Title</th>
+                        <th class="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider w-48">Date</th>
+                        <th class="px-8 py-5 text-sm font-bold text-gray-400 uppercase tracking-wider w-32">Views</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                    <tr th:each="post : ${posts}"
+                        class="group hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors cursor-pointer">
+                        <td class="px-8 py-6 text-gray-500 dark:text-gray-400" th:text="${post.no}">1</td>
+                        <td class="px-8 py-6 font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
+                            th:text="${post.title}">Post Title</td>
+                        <td class="px-8 py-6 text-gray-500 dark:text-gray-400 text-sm"
+                            th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd')}">2024-02-23</td>
+                        <td class="px-8 py-6">
+                            <span class="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full text-xs font-bold"
+                                th:text="${post.views}">42</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-900/50 py-20 px-6 border-t border-gray-200 dark:border-gray-800 mt-20">
+        <div class="max-w-[1440px] mx-auto text-center">
+            <a class="text-xl font-bold mb-6 block" href="#">VIBE CODING</a>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+                © 2024 Vibe Coding Inc. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
