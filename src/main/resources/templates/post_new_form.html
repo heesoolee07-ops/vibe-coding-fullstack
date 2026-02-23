@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <title>Vibe Coding | New Post</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.icons.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <!-- Fallback for material icons if the above doesn't work in user environment -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#000000",
+                        "background-light": "#f4f4f4",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        'xl': '24px',
+                        '2xl': '32px',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-background-dark text-black dark:text-white transition-colors duration-300 min-h-screen">
+    <nav
+        class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-12">
+                <a class="text-xl font-bold tracking-tight" th:href="@{/}">VIBE CODING</a>
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a class="hover:opacity-60 transition-opacity" th:href="@{/posts}">Posts</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <button class="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                    onclick="document.documentElement.classList.toggle('dark')">
+                    <span class="material-icons-outlined dark:hidden">dark_mode</span>
+                    <span class="material-icons-outlined hidden dark:block">light_mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-[800px] mx-auto px-6 py-20">
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold tracking-tight mb-4">New Post</h1>
+            <p class="text-gray-500 dark:text-gray-400">Share your thoughts with the vibe community.</p>
+        </div>
+
+        <div
+            class="bg-white dark:bg-gray-900 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 p-10 shadow-sm">
+            <form id="postForm" th:action="@{/posts/add}" method="post">
+                <div class="space-y-8">
+                    <div>
+                        <label for="title"
+                            class="block text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Title</label>
+                        <input type="text" id="title" name="title" required
+                            class="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-2xl px-6 py-4 text-lg focus:ring-2 focus:ring-black dark:focus:ring-white transition-all outline-none"
+                            placeholder="Entrez le titre de votre post">
+                    </div>
+                    <div>
+                        <label for="content"
+                            class="block text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Content</label>
+                        <textarea id="content" name="content" rows="10" required
+                            class="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-2xl px-6 py-4 text-lg focus:ring-2 focus:ring-black dark:focus:ring-white transition-all outline-none resize-none"
+                            placeholder="Write something amazing..."></textarea>
+                    </div>
+
+                    <div class="flex items-center justify-end gap-4 pt-6">
+                        <a th:href="@{/posts}"
+                            class="px-10 py-4 border border-black dark:border-white rounded-full font-semibold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+                            Cancel
+                        </a>
+                        <button type="submit"
+                            class="px-10 py-4 bg-primary text-white dark:bg-white dark:text-black rounded-full font-semibold hover:opacity-90 transition-all">
+                            Publish Post
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-900/50 py-20 px-6 border-t border-gray-200 dark:border-gray-800 mt-20">
+        <div class="max-w-[1440px] mx-auto text-center">
+            <a class="text-xl font-bold mb-6 block" href="#">VIBE CODING</a>
+            <p class="text-xs text-gray-500 dark:text-gray-400">
+                © 2024 Vibe Coding Inc. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
