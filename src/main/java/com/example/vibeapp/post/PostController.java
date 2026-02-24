@@ -30,6 +30,7 @@ public class PostController {
         postService.increaseViews(no);
         PostResponseDto post = postService.findByNo(no);
         model.addAttribute("post", post);
+        model.addAttribute("tags", postService.findTagsByPostNo(no));
         return "post/post_detail";
     }
 

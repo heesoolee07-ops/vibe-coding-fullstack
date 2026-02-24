@@ -81,6 +81,12 @@
         <article th:if="${post != null}">
             <header class="mb-12">
                 <h1 class="text-5xl font-bold tracking-tight mb-8 leading-tight" th:text="${post.title}">Post Title</h1>
+                <div th:if="${tags != null and !tags.isEmpty()}" class="flex flex-wrap gap-2 mb-6">
+                    <span th:each="tag : ${tags}"
+                        class="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm font-medium rounded-full text-gray-600 dark:text-gray-300"
+                        th:text="'#' + ${tag.tagName}">
+                    </span>
+                </div>
                 <div class="flex items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
                     <div class="flex items-center gap-2">
                         <span class="material-icons-outlined text-base">calendar_today</span>

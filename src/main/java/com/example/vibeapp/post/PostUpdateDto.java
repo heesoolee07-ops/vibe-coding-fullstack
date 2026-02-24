@@ -9,10 +9,12 @@ public record PostUpdateDto(
     @Size(max = 100, message = "제목은 최대 100자까지 가능합니다.")
     String title,
 
-    String content
+    String content,
+
+    String tags
 ) {
     public PostUpdateDto() {
-        this(null, null);
+        this(null, null, null);
     }
 
     public void updateEntity(Post post) {
