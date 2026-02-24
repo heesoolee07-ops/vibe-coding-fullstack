@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.vibeapp.post.PostRepository">
+
+    <select id="findAll" resultType="com.example.vibeapp.post.Post">
+        SELECT 
+            NO, TITLE, CONTENT, CREATED_AT, UPDATED_AT, VIEWS
+        FROM POSTS
+        ORDER BY NO DESC
+    </select>
+
+    <select id="findByNo" parameterType="long" resultType="com.example.vibeapp.post.Post">
+        SELECT 
+            NO, TITLE, CONTENT, CREATED_AT, UPDATED_AT, VIEWS
+        FROM POSTS
+        WHERE NO = #{no}
+    </select>
+
+    <insert id="save" parameterType="com.example.vibeapp.post.Post">
+        <selectKey keyProperty="no" resultType="long" order="BEFORE">
+            SELECT CASE WHEN #{no} IS NULL THEN NULL ELSE #{no} END FROM DUAL
+        </selectKey>
+        MERGE INTO POSTS (NO, TITLE, CONTENT, CREATED_AT, UPDATED_AT, VIEWS)
+        KEY (NO)
+        VALUES (
+            #{no}, 
+            #{title}, 
+            #{content}, 
+            COALESCE(#{createdAt}, CURRENT_TIMESTAMP), 
+            #{updatedAt}, 
+            COALESCE(#{views}, 0)
+        )
+    </insert>
+
+    <delete id="deleteByNo" parameterType="long">
+        DELETE FROM POSTS
+        WHERE NO = #{no}
+    </delete>
+
+</mapper>
