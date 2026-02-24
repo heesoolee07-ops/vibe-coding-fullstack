@@ -20,8 +20,11 @@ public class PostController {
     }
 
     @GetMapping("/posts")
-    public String listPosts(Model model) {
-        model.addAttribute("posts", postService.getAllPosts());
+    public String listPosts(Model model, @RequestParam(value = "page", defaultValue = "1") int page) {
+        int pageSize = 5;
+        model.addAttribute("posts", postService.getPostsPaginated(page, pageSize));
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", postService.getTotalPages(pageSize));
         return "posts";
     }
 
