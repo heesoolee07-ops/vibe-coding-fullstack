@@ -36,4 +36,8 @@ public class PostService {
             postRepository.save(post);
         }
     }
+
+    public void deletePost(Long no) {
+        postRepository.deleteByNo(no);
+    }
 }

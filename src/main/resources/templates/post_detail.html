@@ -108,6 +108,10 @@
                         class="px-10 py-4 bg-primary text-white dark:bg-white dark:text-black rounded-full font-semibold hover:opacity-90 transition-all">
                         Edit
                     </a>
+                    <a th:href="@{/posts/{no}/delete(no=${post.no})}"
+                        class="px-10 py-4 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white rounded-full font-semibold transition-all">
+                        Delete
+                    </a>
                     <a th:href="@{/posts}"
                         class="px-10 py-4 border border-black dark:border-white rounded-full font-semibold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
                         List
