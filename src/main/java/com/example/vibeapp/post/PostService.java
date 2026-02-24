@@ -13,20 +13,20 @@ public class PostService {
         this.postRepository = postRepository;
     }
 
-    public List<Post> getAllPosts() {
+    public List<Post> findAll() {
         return postRepository.findAll();
     }
 
-    public Post getPostByNo(Long no) {
+    public Post findByNo(Long no) {
         return postRepository.findByNo(no);
     }
 
-    public void createPost(Post post) {
+    public void save(Post post) {
         postRepository.save(post);
     }
 
-    public void updatePost(Long no, String title, String content) {
-        Post post = getPostByNo(no);
+    public void update(Long no, String title, String content) {
+        Post post = findByNo(no);
         if (post != null) {
             post.setTitle(title);
             post.setContent(content);
@@ -35,12 +35,12 @@ public class PostService {
         }
     }
 
-    public void deletePost(Long no) {
+    public void delete(Long no) {
         postRepository.deleteByNo(no);
     }
 
-    public List<Post> getPostsPaginated(int page, int size) {
-        List<Post> allPosts = getAllPosts();
+    public List<Post> findPaginated(int page, int size) {
+        List<Post> allPosts = findAll();
         int fromIndex = (page - 1) * size;
         if (fromIndex >= allPosts.size()) {
             return java.util.Collections.emptyList();
@@ -49,8 +49,8 @@ public class PostService {
         return allPosts.subList(fromIndex, toIndex);
     }
 
-    public int getTotalPages(int size) {
-        List<Post> allPosts = getAllPosts();
+    public int countTotalPages(int size) {
+        List<Post> allPosts = findAll();
         if (allPosts.isEmpty()) return 1;
         return (int) Math.ceil((double) allPosts.size() / size);
     }
