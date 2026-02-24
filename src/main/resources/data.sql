@@ -1,0 +1,12 @@
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('첫 번째 게시글', '안녕하세요. 바이브 코딩의 첫 번째 게시글입니다.', CURRENT_TIMESTAMP, 10);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('Spring Boot 4.0 맛보기', 'Spring Boot 4.0과 Java 25를 사용한 최신 개발 환경 설정 가이드입니다.', CURRENT_TIMESTAMP, 25);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('MyBatis와 H2 연동', 'Relational Database와 MyBatis를 활용한 데이터 영속성 계층 구현 방법입니다.', CURRENT_TIMESTAMP, 15);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('DTO 패턴의 이해', '게시판 프로젝트에 DTO와 Record를 적용하여 계층 간 결합도를 낮추는 방법입니다.', CURRENT_TIMESTAMP, 8);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('테일윈드 CSS 디자인', '심플하고 모던한 UI를 위한 Tailwind CSS 적용 사례 공유합니다.', CURRENT_TIMESTAMP, 12);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('자바 25 새로운 기능', '자바 25에서 추가된 레코드 문법과 최신 기능들을 살펴봅니다.', CURRENT_TIMESTAMP, 30);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('웹 프로젝트 아키텍처', '기능형 패키지 구조를 통한 유지보수하기 좋은 프로젝트 구조 설계하기.', CURRENT_TIMESTAMP, 20);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('Thymeleaf 템플릿 엔진', '서버 사이드 렌더링을 위한 타임리프의 기본 사용법과 팁.', CURRENT_TIMESTAMP, 5);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('안티그라비티와 함께하는 코딩', 'AI 에이전트와 페어 프로그래밍을 통한 효율적인 개발 경험.', CURRENT_TIMESTAMP, 50);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('데이터베이스 최적화', '인덱스 설계와 쿼리 성능 개선을 위한 실전 가이드.', CURRENT_TIMESTAMP, 18);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('REST API 설계 원칙', '확장 가능하고 이해하기 쉬운 RESTful API 디자인 패턴.', CURRENT_TIMESTAMP, 14);
+INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, VIEWS) VALUES ('JUnit 5를 이용한 테스트', '신뢰할 수 있는 코드를 위한 단위 테스트 작성 전략.', CURRENT_TIMESTAMP, 9);
