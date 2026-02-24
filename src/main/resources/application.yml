@@ -15,7 +15,7 @@ spring:
         web-allow-others: false
   sql:
     init:
-      mode: always
+      mode: never
 
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
