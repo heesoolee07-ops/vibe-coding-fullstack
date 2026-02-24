@@ -18,20 +18,31 @@
         WHERE NO = #{no}
     </select>
 
-    <insert id="save" parameterType="com.example.vibeapp.post.Post">
-        <selectKey keyProperty="no" resultType="long" order="BEFORE">
-            SELECT CASE WHEN #{no} IS NULL THEN NULL ELSE #{no} END FROM DUAL
-        </selectKey>
-        MERGE INTO POSTS (NO, TITLE, CONTENT, CREATED_AT, UPDATED_AT, VIEWS)
-        KEY (NO)
-        VALUES (
-            #{no}, 
-            #{title}, 
-            #{content}, 
-            COALESCE(#{createdAt}, CURRENT_TIMESTAMP), 
-            #{updatedAt}, 
-            COALESCE(#{views}, 0)
-        )
+    <insert id="save" parameterType="com.example.vibeapp.post.Post" useGeneratedKeys="true" keyProperty="no">
+        <choose>
+            <when test="no == null">
+                INSERT INTO POSTS (TITLE, CONTENT, CREATED_AT, UPDATED_AT, VIEWS)
+                VALUES (
+                    #{title}, 
+                    #{content}, 
+                    COALESCE(#{createdAt}, CURRENT_TIMESTAMP), 
+                    #{updatedAt}, 
+                    COALESCE(#{views}, 0)
+                )
+            </when>
+            <otherwise>
+                MERGE INTO POSTS (NO, TITLE, CONTENT, CREATED_AT, UPDATED_AT, VIEWS)
+                KEY (NO)
+                VALUES (
+                    #{no}, 
+                    #{title}, 
+                    #{content}, 
+                    COALESCE(#{createdAt}, CURRENT_TIMESTAMP), 
+                    #{updatedAt}, 
+                    COALESCE(#{views}, 0)
+                )
+            </otherwise>
+        </choose>
     </insert>
 
     <delete id="deleteByNo" parameterType="long">
