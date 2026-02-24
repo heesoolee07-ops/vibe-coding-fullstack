@@ -31,12 +31,30 @@
   - `spring-boot-starter-web`
   - `spring-boot-starter-thymeleaf`
 
-## 4. 구조 및 설정
+## 4. 프로젝트 구조 및 설정
 
 - **설정 파일**: `src/main/resources/application.yml`
 - **기본 패키지**: `com.example.vibeapp`
+- **패키지 구조 (Feature-based)**:
+    - `com.example.vibeapp.home`: 홈 및 공통 기능
+    - `com.example.vibeapp.post`: 게시글 관련 모든 기능 (Entity, Controller, Service, Repository)
+- **템플릿 구조**:
+    - `src/main/resources/templates/home/`: 홈 관련 뷰
+    - `src/main/resources/templates/post/`: 게시글 관련 뷰
 
-## 5. 검증 계획
+## 5. 구현된 기능
+
+### 5.1. 게시글 관리 (Post)
+- **목록 조회**: 페이징 처리 (페이지당 5개), 페이지네이션 UI 제공
+- **상세 조회**: 게시글 상세 내용 및 메타데이터 확인
+- **등록/수정**: 제목 및 내용 입력/수정 기능
+- **삭제**: 게시글 삭제 기능 제공
+
+### 5.2. 공통 기능
+- **다크 모드**: Tailwind CSS를 활용한 다크 모드 전환 기능
+- **반응형 디자인**: 다양한 기기에 대응하는 반응형 UI
+
+## 6. 검증 계획
 
 - **자동화 테스트**: `./gradlew build` 명령을 통해 전체 빌드 및 테스트 통과 여부 확인
-- **수동 검증**: `./gradlew bootRun` 실행 후 애플리케이션 정상 기동 확인 (콘솔 로그 확인)
+- **수동 검증**: `./gradlew bootRun` 실행 후 애플리케이션 정상 기동 확인 (8080 포트)
