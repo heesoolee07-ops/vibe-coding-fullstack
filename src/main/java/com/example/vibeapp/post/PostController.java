@@ -27,6 +27,7 @@ public class PostController {
 
     @GetMapping("/posts/{no}")
     public String detail(@PathVariable("no") Long no, Model model) {
+        postService.increaseViews(no);
         PostResponseDto post = postService.findByNo(no);
         model.addAttribute("post", post);
         return "post/post_detail";

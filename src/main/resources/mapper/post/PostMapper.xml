@@ -45,6 +45,12 @@
         </choose>
     </insert>
 
+    <update id="updateViews" parameterType="long">
+        UPDATE POSTS
+        SET VIEWS = VIEWS + 1
+        WHERE NO = #{no}
+    </update>
+
     <delete id="deleteByNo" parameterType="long">
         DELETE FROM POSTS
         WHERE NO = #{no}

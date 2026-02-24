@@ -28,6 +28,10 @@ public class PostService {
         postRepository.save(createDto.toEntity());
     }
 
+    public void increaseViews(Long no) {
+        postRepository.updateViews(no);
+    }
+
     public void update(Long no, PostUpdateDto updateDto) {
         Post post = postRepository.findByNo(no);
         if (post != null) {

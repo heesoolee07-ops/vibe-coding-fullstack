@@ -8,5 +8,6 @@ public interface PostRepository {
     List<Post> findAll();
     Post findByNo(Long no);
     void save(Post post);
+    void updateViews(Long no);
     void deleteByNo(Long no);
 }
