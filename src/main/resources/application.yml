@@ -1,3 +1,29 @@
 spring:
   application:
     name: vibeapp
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:./data/testdb
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.example.vibeapp.post
+  configuration:
+    map-underscore-to-camel-case: true
+
+debug: true
+
+logging:
+  level:
+    org.springframework.boot.autoconfigure: DEBUG
+  file:
+    name: ./logs/app.log

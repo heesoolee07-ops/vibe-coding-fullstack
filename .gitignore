@@ -10,3 +10,8 @@ out/
 *.iws
 *.ipr
 .DS_Store
+
+/data/
+*.mv.db
+*.trace.db
+/logs/
