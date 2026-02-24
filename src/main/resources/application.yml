@@ -3,7 +3,7 @@ spring:
     name: vibeapp
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:./data/testdb
+    url: jdbc:h2:file:./data/testdb;AUTO_SERVER=TRUE
     username: sa
     password:
   h2:
@@ -13,6 +13,9 @@ spring:
       settings:
         trace: false
         web-allow-others: false
+  sql:
+    init:
+      mode: always
 
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
