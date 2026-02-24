@@ -74,19 +74,19 @@
 
         <div th:if="${post != null}"
             class="bg-white dark:bg-gray-900 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 p-10 shadow-sm">
-            <form id="editForm" th:action="@{/posts/{no}/save(no=${post.no})}" method="post">
+            <form id="editForm" th:action="@{/posts/{no}/save(no=${post.no})}" th:object="${post}" method="post">
                 <div class="space-y-8">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
                             <label
                                 class="block text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">No.</label>
-                            <input type="text" th:value="${post.no}" readonly
+                            <input type="text" th:field="*{no}" readonly
                                 class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-2xl px-6 py-4 text-lg text-gray-500 cursor-not-allowed outline-none">
                         </div>
                         <div>
                             <label
                                 class="block text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Views</label>
-                            <input type="text" th:value="${post.views}" readonly
+                            <input type="text" th:field="*{views}" readonly
                                 class="w-full bg-gray-100 dark:bg-gray-800 border-none rounded-2xl px-6 py-4 text-lg text-gray-500 cursor-not-allowed outline-none">
                         </div>
                     </div>
@@ -94,16 +94,17 @@
                     <div>
                         <label for="title"
                             class="block text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Title</label>
-                        <input type="text" id="title" name="title" th:value="${post.title}" required
+                        <input type="text" th:field="*{title}"
                             class="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-2xl px-6 py-4 text-lg focus:ring-2 focus:ring-black dark:focus:ring-white transition-all outline-none">
+                        <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="text-red-500 text-sm mt-2">
+                        </p>
                     </div>
 
                     <div>
                         <label for="content"
                             class="block text-sm font-bold uppercase tracking-wider text-gray-400 mb-3">Content</label>
-                        <textarea id="content" name="content" rows="10" required
-                            class="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-2xl px-6 py-4 text-lg focus:ring-2 focus:ring-black dark:focus:ring-white transition-all outline-none resize-none"
-                            th:text="${post.content}"></textarea>
+                        <textarea th:field="*{content}" rows="10"
+                            class="w-full bg-gray-50 dark:bg-gray-800 border-none rounded-2xl px-6 py-4 text-lg focus:ring-2 focus:ring-black dark:focus:ring-white transition-all outline-none resize-none"></textarea>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">

@@ -13,24 +13,25 @@ public class PostService {
         this.postRepository = postRepository;
     }
 
-    public List<Post> findAll() {
-        return postRepository.findAll();
+    public List<PostListDto> findAll() {
+        return postRepository.findAll().stream()
+                .map(PostListDto::from)
+                .toList();
     }
 
-    public Post findByNo(Long no) {
-        return postRepository.findByNo(no);
+    public PostResponseDto findByNo(Long no) {
+        Post post = postRepository.findByNo(no);
+        return post != null ? PostResponseDto.from(post) : null;
     }
 
-    public void save(Post post) {
-        postRepository.save(post);
+    public void save(PostCreateDto createDto) {
+        postRepository.save(createDto.toEntity());
     }
 
-    public void update(Long no, String title, String content) {
-        Post post = findByNo(no);
+    public void update(Long no, PostUpdateDto updateDto) {
+        Post post = postRepository.findByNo(no);
         if (post != null) {
-            post.setTitle(title);
-            post.setContent(content);
-            post.setUpdatedAt(LocalDateTime.now());
+            updateDto.updateEntity(post);
             postRepository.save(post);
         }
     }
@@ -39,18 +40,20 @@ public class PostService {
         postRepository.deleteByNo(no);
     }
 
-    public List<Post> findPaginated(int page, int size) {
-        List<Post> allPosts = findAll();
+    public List<PostListDto> findPaginated(int page, int size) {
+        List<Post> allPosts = postRepository.findAll();
         int fromIndex = (page - 1) * size;
         if (fromIndex >= allPosts.size()) {
             return java.util.Collections.emptyList();
         }
         int toIndex = Math.min(fromIndex + size, allPosts.size());
-        return allPosts.subList(fromIndex, toIndex);
+        return allPosts.subList(fromIndex, toIndex).stream()
+                .map(PostListDto::from)
+                .toList();
     }
 
     public int countTotalPages(int size) {
-        List<Post> allPosts = findAll();
+        List<Post> allPosts = postRepository.findAll();
         if (allPosts.isEmpty()) return 1;
         return (int) Math.ceil((double) allPosts.size() / size);
     }
