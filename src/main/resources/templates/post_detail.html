@@ -103,10 +103,16 @@
                     Last updated: <span th:text="${#temporals.format(post.updatedAt, 'yyyy-MM-dd HH:mm')}">2024-02-23
                         12:00</span>
                 </div>
-                <a th:href="@{/posts}"
-                    class="px-10 py-4 border border-black dark:border-white rounded-full font-semibold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
-                    List
-                </a>
+                <div class="flex items-center gap-4">
+                    <a th:href="@{/posts/{no}/edit(no=${post.no})}"
+                        class="px-10 py-4 bg-primary text-white dark:bg-white dark:text-black rounded-full font-semibold hover:opacity-90 transition-all">
+                        Edit
+                    </a>
+                    <a th:href="@{/posts}"
+                        class="px-10 py-4 border border-black dark:border-white rounded-full font-semibold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+                        List
+                    </a>
+                </div>
             </footer>
         </article>
     </main>

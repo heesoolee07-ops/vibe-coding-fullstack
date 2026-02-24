@@ -37,6 +37,14 @@ public class PostRepository {
     }
 
     public void save(Post post) {
+        if (post.getNo() != null) {
+            Post existingPost = findByNo(post.getNo());
+            if (existingPost != null) {
+                int index = posts.indexOf(existingPost);
+                posts.set(index, post);
+                return;
+            }
+        }
         Long nextNo = posts.stream()
                 .mapToLong(Post::getNo)
                 .max()
